@@ -54,12 +54,57 @@ numAverage([2, 4, 6]);
 // Problem 5:
 // Write a function that takes a string as input and returns the reverse of the string.
 
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+                                         //OR
+
+function reverseString(str) {
+  let finalString = "";
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    finalString += str[i];
+  }
+  return finalString;
+}
+
+reverseString("Hello World!");
+
+
 // Problem 6:
 // Write a function that takes an array of integers and returns a new array with all the even
 // numbers from the original array.
 
+function evenArray(array) {
+
+  let finalArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+
+    if (array[i] % 2 === 0) {
+      finalArray.push(array[i]);
+    }
+  }
+return finalArray;
+}
+evenArray([1, 2, 3, 4, 5, 6]);
+
 // Problem 7:
 // Write a function that takes a sentence as input and returns the number of words in the sentence.
+
+function wordsCounter(sentence){
+  let result = 0;
+  for (let i = 0; i < sentence.length; i++) {
+
+    if (sentence[i] === " ") {
+      result = result + 1;
+    }
+}
+let numberOfWords = result + 1 + " words in total.";
+return numberOfWords;
+}
+wordsCounter("Yo me llamo Omar.");
 
 // Problem 8:
 // Write a function that takes an array of strings and returns a new array with
