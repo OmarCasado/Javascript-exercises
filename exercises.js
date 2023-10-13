@@ -79,7 +79,6 @@ reverseString("Hello World!");
 function evenArray(array) {
 
   let finalArray = [];
-
   for (let i = 0; i < array.length; i++) {
 
     if (array[i] % 2 === 0) {
@@ -108,14 +107,61 @@ wordsCounter("Yo me llamo Omar.");
 
 // Problem 8:
 // Write a function that takes an array of strings and returns a new array with
-//  the strings sorted in alphabetical order.
+// the strings sorted in alphabetical order.
+
+function alphaOrder(array) {
+
+  let finalArray = array.sort();
+  return finalArray;
+}
+
+alphaOrder(["Dominican Republic", "Japan", "United States", "Spain"]);
 
 // Problem 9:
 // Write a function that checks if a given number is a prime number.
 
+function isPrimeNumber (number) {
+
+  let result;
+
+  if (number === 2 || number ===3) {
+    result = number + " is a PRIME number, since it only can be divided by one and by itself.";
+  }
+
+  for(let i = 3; i <= Math.sqrt(number); i++){
+
+    if (number % i === 0) {
+      result = number + " is a COMPOSITE number, because it is divisible by " + i;
+    } else {
+      result = number + " is a PRIME number, since it only can be divided by one and by itself.";
+    }
+}
+return result;
+}
+isPrimeNumber(11);
+
 // Problem 10:
 // Write a function that takes an array of numbers and returns
 // the sum of all the prime numbers in the array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Problem 11:
 // Write a function that finds the factorial of a given number.
