@@ -121,24 +121,29 @@ alphaOrder(["Dominican Republic", "Japan", "United States", "Spain"]);
 // Write a function that checks if a given number is a prime number.
 
 function isPrimeNumber (number) {
-
-  let result;
-
-  if (number === 2 || number ===3) {
-    result = number + " is a PRIME number, since it only can be divided by one and by itself.";
-  }
-
-  for(let i = 3; i <= Math.sqrt(number); i++){
-
-    if (number % i === 0) {
-      result = number + " is a COMPOSITE number, because it is divisible by " + i;
-    } else {
-      result = number + " is a PRIME number, since it only can be divided by one and by itself.";
+  function isPrimeNumber(number) {
+    if (number <= 1) {
+      return number + " is not a prime number, since it's less than or equal to 1.";
     }
+  
+    if (number <= 3) {
+      return number + " is a prime number, since it only can be divided by one and by itself.";
+    }
+  
+    if (number % 2 === 0) {
+      return number + " is not a prime number, because it is divisible by 2.";
+    }
+  
+    // Starting the loop from 3 and checking only odd numbers
+    for (let i = 3; i <= Math.sqrt(number); i += 2) {
+      if (number % i === 0) {
+        return number + " is not a prime number, because it is divisible by " + i + ".";
+      }
+    }
+  
+    return number + " is a prime number, since it only can be divided by one and by itself.";
+  }
 }
-return result;
-}
-isPrimeNumber(11);
 
 // Problem 10:
 // Write a function that takes an array of numbers and returns
@@ -146,7 +151,44 @@ isPrimeNumber(11);
 
 
 
+function isPrimeNumber (number) {
+  let result;
+  if (number === 2 || number ===3) {
+    result = true;
+  }
+  for(let i = 3; i <= Math.sqrt(number); i++){
 
+    if (number % i === 0) {
+      result = false;
+    } else {
+      result = true;
+    }
+}
+return result;
+}
+
+
+function sumOfPrimes (array, callBackFunction) {
+  let primesArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+
+    if(callBackFunction(array[i]) === true) {
+      primesArray.push(array[i]);
+    } else {
+      primesArray.pop(array[i]);
+    }
+  }
+  return primesArray;
+  }
+
+sumOfPrimes([2,3,5,10,25,33,39,80], isPrimeNumber);
+
+
+
+
+1. Crear una funcion que reciba dos parametros, un array y otro la funcion de isPrime
+2. 
 
 
 
