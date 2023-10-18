@@ -120,7 +120,6 @@ alphaOrder(["Dominican Republic", "Japan", "United States", "Spain"]);
 // Problem 9:
 // Write a function that checks if a given number is a prime number.
 
-function isPrimeNumber (number) {
   function isPrimeNumber(number) {
     if (number <= 1) {
       return number + " is not a prime number, since it's less than or equal to 1.";
@@ -143,67 +142,49 @@ function isPrimeNumber (number) {
   
     return number + " is a prime number, since it only can be divided by one and by itself.";
   }
-}
+
 
 // Problem 10:
 // Write a function that takes an array of numbers and returns
 // the sum of all the prime numbers in the array.
 
-
-
-function isPrimeNumber (number) {
-  let result;
-  if (number === 2 || number ===3) {
-    result = true;
-  }
-  for(let i = 3; i <= Math.sqrt(number); i++){
-
-    if (number % i === 0) {
-      result = false;
-    } else {
-      result = true;
+  function isPrimeNumber(number) {
+    if (number === 2) {
+      return true;
     }
-}
-return result;
-}
-
+    if (number <= 1 || number % 2 === 0) {
+      return false;
+    }
+    if (number <= 3) {
+      return true;
+    }
+    for (let i = 3; i <= Math.sqrt(number); i += 2) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 
 function sumOfPrimes (array, callBackFunction) {
   let primesArray = [];
-
   for (let i = 0; i < array.length; i++) {
-
-    if(callBackFunction(array[i]) === true) {
+    if(callBackFunction(array[i])) {
       primesArray.push(array[i]);
-    } else {
-      primesArray.pop(array[i]);
     }
   }
-  return primesArray;
+
+    let sumValue = 0;
+
+    for (let j = 0; j < primesArray.length; j++) {
+      sumValue += primesArray[j];
+    }
+
+    return sumValue;
+
   }
 
-sumOfPrimes([2,3,5,10,25,33,39,80], isPrimeNumber);
-
-
-
-
-1. Crear una funcion que reciba dos parametros, un array y otro la funcion de isPrime
-2. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+sumOfPrimes([2, 3], isPrimeNumber);
 
 // Problem 11:
 // Write a function that finds the factorial of a given number.
