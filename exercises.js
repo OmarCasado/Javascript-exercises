@@ -35,11 +35,11 @@ function strLength (str) {
 
 strLength("hola");
 
-
 // Problem 4:
 // Write a function that takes an array of numbers as input and returns the average of the numbers.
 
 function numAverage (array) {
+
   let sum = 0;
 
   for (let i = 0; i < array.length; i++) {
@@ -61,6 +61,7 @@ function reverseString(str) {
                                          //OR
 
 function reverseString(str) {
+
   let finalString = "";
 
   for (let i = str.length - 1; i >= 0; i--) {
@@ -93,7 +94,9 @@ evenArray([1, 2, 3, 4, 5, 6]);
 // Write a function that takes a sentence as input and returns the number of words in the sentence.
 
 function wordsCounter(sentence){
+
   let result = 0;
+
   for (let i = 0; i < sentence.length; i++) {
 
     if (sentence[i] === " ") {
@@ -189,16 +192,15 @@ sumOfPrimes([2, 3], isPrimeNumber);
 // Problem 11:
 // Write a function that finds the factorial of a given number.
 
-//Write a function that gets an argument n
-//Create an empty array to store the value of a future array of numbers.
-//Create an if statement to verify if n is 1, then if n is 2 or bigger.
-//Create a loop to count down from n and returns an array of
-//all the numbers smaller than n.
-//console.log that array to verify is working properly.
-//create a variable and initialize it to 1.
-
-//create a loop that multiplies each number of the returned array and stores that
-//value in the variable.
+/*1. Write a function that gets an argument n
+  2. Create an empty array to store the value of a future array of numbers.
+  3. Create an if statement to verify if n is 1, then if n is 2 or bigger.
+  4. Create a loop to count down from n and returns an array of
+  all the numbers smaller than n.
+  5. console.log that array to verify is working properly.
+  6. Create a variable and initialize it to 1.
+  7. Create a loop that multiplies each number of the returned array and stores that
+  value in the variable.*/
 
 function calculateFactorial (n) {
 
@@ -224,13 +226,46 @@ function calculateFactorial (n) {
 calculateFactorial(3);
 
 
-
-
-
-
 // Problem 12:
 // Write a function that checks if a given word is a palindrome
 // (reads the same forwards and backwards).
+
+/* 1. Create a function with a string str as an argument.
+  2. Create a variable to store a future value of a reversed str.
+  3. Create a loop which returns str reversed.
+  4. Convert all letters to lower case
+  5. Create an if statement to compare the original str with the reversed str and
+    return Palindrome if it reads the same forwards and backwards.*/
+
+    function checkPalindrome(str) {
+
+      let reverse = "";
+
+      for (let i = str.length - 1; i >= 0; i--) {
+        reverse += str[i];
+      }
+
+      if (typeof str === "string") {
+        reverse = reverse.toLowerCase();
+        str = str.toLowerCase();
+      } else if (typeof str !== "string") {
+        return "Please provide a word to check if it is a palindrome."
+      }
+
+      if(reverse === str) {
+        return str + " is a palindrome."
+      } else {
+        return str + " is NOT a palindrome."
+      }
+    }
+
+    checkPalindrome("Hola");
+
+
+
+
+
+
 
 // Problem 13:
 // Write a function that finds the nth Fibonacci number.
