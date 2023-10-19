@@ -189,6 +189,45 @@ sumOfPrimes([2, 3], isPrimeNumber);
 // Problem 11:
 // Write a function that finds the factorial of a given number.
 
+//Write a function that gets an argument n
+//Create an empty array to store the value of a future array of numbers.
+//Create an if statement to verify if n is 1, then if n is 2 or bigger.
+//Create a loop to count down from n and returns an array of
+//all the numbers smaller than n.
+//console.log that array to verify is working properly.
+//create a variable and initialize it to 1.
+
+//create a loop that multiplies each number of the returned array and stores that
+//value in the variable.
+
+function calculateFactorial (n) {
+
+  let array = [];
+  let factorial = 1;
+
+  if(n === 1) {
+    factorial = 1;
+  } else if (n >= 2) {
+    for (let i = n; i > 0; i--) {
+      array.push(i);
+    }
+  }
+
+  for (let j = 0; j < array.length; j++) {
+    factorial *= array[j];
+  }
+  //I had to comment out this return since it throws me an error when trying to return 2 different statements
+  /*return array;*/
+  return factorial;
+}
+
+calculateFactorial(3);
+
+
+
+
+
+
 // Problem 12:
 // Write a function that checks if a given word is a palindrome
 // (reads the same forwards and backwards).
