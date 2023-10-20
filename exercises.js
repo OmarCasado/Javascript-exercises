@@ -262,13 +262,49 @@ calculateFactorial(3);
     checkPalindrome("Hola");
 
 
-
-
-
-
-
 // Problem 13:
 // Write a function that finds the nth Fibonacci number.
+
+/* 1. Create a function that gets an argument n.
+  2.  Create a variable to store an array of numbers (the fibonacci sequence) initialize it to 1.
+  3.  Create a loop that starts from 0 and adds the number before to create a sequence
+  until the n (index) number.
+  4.  Return the number in the fibonacci sequence correspondent to the n index */
+
+  function nthFibonacci (n) {
+
+    let fibonacciSequence = [1];
+
+    if(n) {
+      fibonacciSequence[0] = 1;
+      fibonacciSequence[1] = 1;
+      fibonacciSequence[2] = 2;
+    }
+
+    for (let i = 2; i <= n; i++) {
+      fibonacciSequence.push(i + (i - 1));
+    }
+
+    return fibonacciSequence;
+
+  }
+
+  nthFibonacci(10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Problem 14:
 // Write a function that takes a string and returns the most frequent character in the string.
