@@ -273,16 +273,15 @@ calculateFactorial(3);
 
   function nthFibonacci (n) {
 
-    let fibonacciSequence = [1];
+    let fibonacciSequence = [];
 
     if(n) {
-      fibonacciSequence[0] = 1;
+      fibonacciSequence[0] = 0;
       fibonacciSequence[1] = 1;
-      fibonacciSequence[2] = 2;
     }
 
-    for (let i = 2; i <= n; i++) {
-      fibonacciSequence.push(i + (i - 1));
+    for (let i = 2; i < n; i++) {
+      fibonacciSequence.push((fibonacciSequence[i - 1])  + (fibonacciSequence[i - 2]));
     }
 
     return fibonacciSequence;
